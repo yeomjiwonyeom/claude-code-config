@@ -18,6 +18,14 @@ echo "✓ Installed 7 agents"
 cp -r "$SCRIPT_DIR/skills/"* "$CLAUDE_DIR/skills/"
 echo "✓ Installed 4 skills"
 
+# Copy CLAUDE.md if it doesn't exist
+if [ ! -f "$CLAUDE_DIR/CLAUDE.md" ]; then
+  cp "$SCRIPT_DIR/CLAUDE.md" "$CLAUDE_DIR/"
+  echo "✓ Installed CLAUDE.md"
+else
+  echo "⚠ CLAUDE.md already exists, skipping (merge manually if needed)"
+fi
+
 echo ""
 echo "Done! Installed to $CLAUDE_DIR"
 echo ""
